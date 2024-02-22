@@ -83,10 +83,28 @@
         <div class="chart-description">
             <h2>Section 4: Using an API</h2>
             <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
-                I copied the API from Economics Observatory to create a graph on UK unemployment
+                I copied the API from Economics Observatory to create graphs
             </p>
         </div>
-        <figure id="Location4"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <figure id="Location4"></figure> 
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            Using multiple APIs
+        </p>
+        <figure id="Location6"></figure> 
+    </section>
+
+    <section>
+        <div class="chart-description">
+            <h2>Section 5: Adding dimensions</h2>
+            <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+                Map with colour dimensions
+            </p>
+        </div>
+        <figure id="Location5"></figure> <!-- we give it an id so we can put a vega-lite graph here with VegaEmbed -->
+        <p> <!-- This is a paragraph, it's the main way to display text on a web page -->
+            Graph with group, value, and colour dimensions
+        </p>
+        <figure id="Location7"></figure> 
     </section>
 
     <!-- Do you want to add more sections? -->
@@ -103,11 +121,17 @@
         var figure_2_spec = "https://raw.githubusercontent.com/EconomicsObservatory/courses/main/2/s2_chart2.json";
         var figure_3_spec = "chart3.json"
         var figure_4_spec = "ukunemp.json"
+        var figure_5_spec = "map.json"
+        var figure_6_spec = "multipledata.json"
+        var figure_7_spec = "colourchart.json"
 
         vegaEmbed('#Location1', figure_1_spec) // We're using the vegaEmbed function to put a graph in the element with id figure_1
         vegaEmbed('#Location2', figure_2_spec)
         vegaEmbed('#Location3', figure_3_spec)
         vegaEmbed('#Location4', figure_4_spec)
+        vegaEmbed('#Location5', figure_5_spec)
+        vegaEmbed('#Location6', figure_6_spec)
+        vegaEmbed('#Location7', figure_7_spec)
 
 
         // Do you want to add more graphs?
