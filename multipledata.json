@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "description": "Chart that uses repeated layers to make multiple calls to an API",
+
+    "title": {
+      "text": "Unemployment rate",
+      "subtitle":"% rate | Source: STATCAN, FRED, ONS",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+    "height":300,
+    "width":400,
+
+    "encoding": {
+      "x": {"field": "date", "type": "temporal", "title": null, "axis": {"grid": false}},
+      "y": {"field": "value", "type": "quantitative", "title": null, "axis": {"grid": false}},
+      "color":{"field":"Country", "title":null, "legend":{"orient": "top-left"}}
+    },
+
+    "layer": [
+      
+      {"data": {"url": "https://api.economicsobservatory.com/gbr/unem?vega"},
+      "transform": [
+        {"calculate": "'United Kingdom'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"red"}
+      },
+
+      {"data": {"url": "https://api.economicsobservatory.com/fra/unem?vega"},
+      "transform": [
+        {"calculate": "'France'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"green"}
+      },
+
+      {"data": {"url": "https://api.economicsobservatory.com/chn/unem?vega"},
+      "transform": [
+        {"calculate": "'China'", "as": "Country"}
+      ],
+      "mark": {"type":"line", "color":"#20bbab"}
+      }
+    ]
+}
