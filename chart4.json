@@ -1,0 +1,22 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text":"GDP QoQ Growth",
+    "subtitle": ["QoQ4 %", "Source: ONS"]
+  },
+
+  "width": 400,
+  "height": 300,
+
+  "data": {"url": "https://raw.githubusercontent.com/libs03/libs03.github.io/main/GDP_QoQ_econobservatory.csv"},
+
+  "mark": {
+    "type": "line",
+    "color": "#0a8d4e"},
+
+  "encoding": {
+    "x": {"field": "Date", "type": "nominal"},
+    "y": {"field": "GDP QoQ growth", "type": "quantitative", "title":null}
+  }
+}
